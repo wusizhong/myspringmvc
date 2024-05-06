@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+
+    <component-scan base-package="com.mmg.controller" />
+
+    <bean class="org.springmvc.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <interceptors>
+        <bean class="com.mmg.interceptor.LoginInterceptor"/>
+    </interceptors>
+</beans>
