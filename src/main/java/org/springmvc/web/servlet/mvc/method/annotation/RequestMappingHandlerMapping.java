@@ -1,6 +1,6 @@
 package org.springmvc.web.servlet.mvc.method.annotation;
 
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import org.springmvc.web.context.WebApplicationContext;
 import org.springmvc.web.method.HandlerMethod;
 import org.springmvc.web.method.RequestMappingInfo;

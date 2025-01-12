@@ -1,17 +1,16 @@
 package org.springmvc.web.servlet;
 
-import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import org.springmvc.web.context.WebApplicationContext;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.nio.charset.Charset;
-import java.util.Locale;
 
 import static org.springmvc.web.constant.Const.*;
 
@@ -34,7 +33,12 @@ public class DispatcherServlet extends HttpServlet {
             String substring = contextConfigLocation.substring(PREFIX_CLASSPATH.length());
             String path = Thread.currentThread().getContextClassLoader()
                     .getResource(substring).getPath();
-            contextConfigLocationPath = URLDecoder.decode(path, Charset.defaultCharset());
+            try {
+                contextConfigLocationPath = URLDecoder.decode(path, "UTF-8");
+            } catch (UnsupportedEncodingException e) {
+                throw new RuntimeException(e);
+            }
+
         }
 
         //初始化容器

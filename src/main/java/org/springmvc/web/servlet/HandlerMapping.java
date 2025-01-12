@@ -1,6 +1,6 @@
 package org.springmvc.web.servlet;
 
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 处理器映射器

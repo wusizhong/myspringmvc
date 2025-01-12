@@ -1,7 +1,7 @@
 package org.springmvc.web.servlet.view;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springmvc.web.servlet.View;
 
 import java.util.Map;

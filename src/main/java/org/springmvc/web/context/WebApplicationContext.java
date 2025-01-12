@@ -1,6 +1,6 @@
 package org.springmvc.web.context;
 
-import jakarta.servlet.ServletContext;
+import javax.servlet.ServletContext;
 import org.springmvc.context.ApplicationContext;
 
 public class WebApplicationContext extends ApplicationContext {
